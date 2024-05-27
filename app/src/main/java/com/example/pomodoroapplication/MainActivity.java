@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     Button btnStart;
@@ -84,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
             txtMessage.setText("Congrats!!! Mission Completed!");
             finishAudio.start();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        FirebaseAuth.getInstance().signOut();
+        super.onDestroy();
     }
 
     private void updateTime(long kalan){

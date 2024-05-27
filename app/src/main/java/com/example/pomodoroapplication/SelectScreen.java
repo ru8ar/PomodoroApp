@@ -3,14 +3,12 @@ package com.example.pomodoroapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.NumberPicker;
 
-public class SelectScreenActivity extends AppCompatActivity {
+public class SelectScreen extends AppCompatActivity {
 
     NumberPicker npBreakTime,npRoundTime,npGoal,npLongBreak;
     Button btnGo;
@@ -82,7 +80,7 @@ public class SelectScreenActivity extends AppCompatActivity {
 
     }
     public void onClick(View v) {
-        Intent myInt = new Intent(SelectScreenActivity.this, MainActivity.class);
+        Intent myInt = new Intent(SelectScreen.this, MainActivity.class);
         myInt.putExtra("goal", goal);
         myInt.putExtra("roundTime",roundTime);
         myInt.putExtra("breakTime", breakTime);
